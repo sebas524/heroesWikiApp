@@ -1,0 +1,27 @@
+<div class="card-container">
+  <mat-card *ngFor="let i of heroes">
+    <mat-card-header>
+      <mat-card-title> {{ i.superhero }}</mat-card-title>
+      <mat-card-subtitle>{{ i.alter_ego }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="i | heroImage" alt="{{ i.superhero }}" />
+    <mat-card-content>
+      <h3>{{ i.publisher }}</h3>
+      <p><strong>first appearance </strong>{{ i.first_appearance }}</p>
+      <br />
+      <strong>Characters: </strong>{{ i.characters }}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" [routerLink]="['/heroes', i.id]">
+        read more...
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        [routerLink]="['/heroes/edit', i.id]"
+      >
+        edit
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
