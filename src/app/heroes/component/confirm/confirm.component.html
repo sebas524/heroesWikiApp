@@ -1,0 +1,16 @@
+<!-- <h3>are you sure you want to delete this entry?</h3>
+<hr />
+<p>this will permanently delete {{ data.superhero }}.</p>
+<div>
+  <button mat-button (click)="delete()" color="warn">yes</button>
+  <button mat-button (click)="cancel()">cancel</button>
+</div> -->
+
+<h1 mat-dialog-title>are you sure you want to delete this entry?</h1>
+<div mat-dialog-content>Would you like to delete {{ data.superhero }}?</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="cancel()">No</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)="delete()">
+    Ok
+  </button>
+</div>

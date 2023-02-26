@@ -1,1 +1,25 @@
-<p>hero works!</p>
+<div class="hero-container-loading" *ngIf="!hero; else divHero">
+  ><mat-spinner></mat-spinner>
+</div>
+
+<ng-template #divHero>
+  <div class="hero-container-main">
+    <div class="hero-container-first-half">
+      <h1>{{ hero.superhero }}</h1>
+      <img [src]="hero | heroImage" alt="" />
+    </div>
+    <div class="hero-container-second-half">
+      <mat-list>
+        <mat-list-item
+          >first appeareance: {{ hero.first_appearance }}</mat-list-item
+        >
+        <mat-list-item>Characters: {{ hero.characters }}</mat-list-item>
+        <mat-list-item>Publisher: {{ hero.publisher }}</mat-list-item>
+        <mat-list-item>Alter Ego: {{ hero.alter_ego }}</mat-list-item>
+      </mat-list>
+      <button routerLink="./list" mat-raised-button color="warn">
+        go back
+      </button>
+    </div>
+  </div>
+</ng-template>

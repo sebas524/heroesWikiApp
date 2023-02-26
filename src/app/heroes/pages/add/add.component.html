@@ -1,1 +1,67 @@
-<p>add works!</p>
+<h1>
+  <span>{{ hero.id ? "edit" : "add new" }}</span> hero
+  <small>{{ hero.superhero }}</small>
+</h1>
+
+<div class="create-hero-container-main">
+  <div class="create-hero-container-first-half">
+    <img [src]="hero | heroImage" alt="" />
+  </div>
+
+  <div class="create-hero-container-second-half">
+    <div class="create-hero-container-div">
+      <mat-form-field>
+        <mat-label>superhero</mat-label>
+        <input matInput type="text" required [(ngModel)]="hero.superhero" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>alter-ego </mat-label>
+        <input matInput type="text" required [(ngModel)]="hero.alter_ego" />
+      </mat-form-field>
+    </div>
+
+    <div class="create-hero-container-div">
+      <mat-form-field>
+        <mat-label>first appearance</mat-label>
+        <input
+          matInput
+          type="text"
+          required
+          [(ngModel)]="hero.first_appearance"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>characters</mat-label>
+        <input matInput type="text" required="" [(ngModel)]="hero.characters" />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <mat-label>publisher</mat-label>
+      <mat-select required [(ngModel)]="hero.publisher">
+        <mat-option *ngFor="let i of publishers" [value]="i.id">{{
+          i.description
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>image url</mat-label>
+      <input matInput type="url" required [(ngModel)]="hero.alt_img" />
+    </mat-form-field>
+
+    <div class="create-hero-container-div">
+      <button (click)="save()" mat-raised-button color="primary">
+        <mat-icon>save</mat-icon>save
+      </button>
+      <button
+        (click)="delete()"
+        mat-raised-button
+        color="primary"
+        *ngIf="hero.id"
+      >
+        <mat-icon>remove</mat-icon>remove
+      </button>
+    </div>
+  </div>
+</div>

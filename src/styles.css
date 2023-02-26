@@ -33,3 +33,82 @@ body {
   margin-right: 5px;
   text-transform: capitalize;
 }
+
+/* hero.component */
+.hero-container-loading {
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+}
+.hero-container-main {
+  margin-top: 10px;
+  padding: 2rem;
+  display: flex;
+
+  justify-content: center;
+}
+.hero-container-main img {
+  width: 350px;
+}
+
+.hero-container-first-half {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.hero-container-second-half {
+  margin-top: 20px;
+}
+.hero-container-second-half button {
+  margin-left: 15px;
+  text-transform: capitalize;
+}
+
+/* search.component */
+.search-link {
+  cursor: pointer;
+}
+
+/* add.component */
+.create-hero-container-main {
+  margin-top: 10px;
+  padding: 2rem;
+  display: flex;
+
+  justify-content: center;
+}
+
+.create-hero-container-main img {
+  width: 350px;
+}
+
+.create-hero-container-first-half {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.create-hero-container-second-half {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-hero-container-second-half .create-hero-container-div {
+  display: flex;
+  gap: 20px;
+}
+
+.create-hero-container-second-half button {
+  text-transform: capitalize;
+}
+
+/* login component */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
